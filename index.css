@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.twitter-link {
+  height: 40px;
+  position: relative;
+  top: 0.5em;
+}
+
+.twitter-link:hover {
+  color: #2ba6df;
+}
+
+.snap-container {
+  overflow: auto;
+  outline: 1px dashed lightgray;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100vh;
+}
+
+.snap-container > section {
+  scroll-snap-align: center;
+  height: 100%;
+  background-color: burlywood;
+  display: flex;
+  gap: 16px;
+  padding: 2em;
+}
+
+.snap-container section:nth-child(even) {
+  /* background-color: #fff; */
+  background-color: wheat;
+}
+
+/* .snap-container > section > aside {
+  padding: 1em;
+} */
+
+.snap-container > section > main {
+  flex: 1 0 40%;
+}
+
+.snap-container > section > aside {
+  flex: 1 0 60%;
+  background-color: brown;
+}
+
+.snap-container > section h2,
+.snap-container > section h3 {
+  margin-top: 0;
+}
+
+.nav {
+  /* max-width: 200px; */
+  font-size: 1.2rem;
+  max-width: 10em;
+  padding: 0;
+}
+
+.nav > li {
+  /* font-size: 1.2rem; */
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em;
+  border: 1px solid;
+}
+
+.nav > li:first-child {
+  border-top-right-radius: 8px;
+}
+
+.nav > li:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.nav > li > *:not(:first-child) {
+  margin-left: 0.5em;
+}
+
+.nav > li:hover {
+  background-color: cadetblue;
+}
+
+.nav > li[data-badge]:after {
+  content: attr(data-badge);
+  margin-left: auto;
+  font-size: 0.7em;
+  background-color: peru;
+  padding: 0.1em 0.2em;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.nav .icon {
+  border-radius: 50%;
+  background-color: brown;
+  /* height: 24px;
+  width: 24px; */
+  height: 1em;
+  width: 1em;
+  flex: 0 0 1em;
+}
+
+.nav .text {
+  margin: 0;
+}
+
+code {
+  background-color: antiquewhite;
+  color: #000;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.quote {
+  position: relative;
+  padding: 0.75em;
+  background-color: rgba(255, 228, 196, 0.5);
+}
+
+.quote:before {
+  position: absolute;
+}
+
+.snap-container aside > img {
+  margin: 0.5em;
+}
+
+.snap-container aside,
+.snap-container .carousel > * {
+  text-align: center;
+}
+
+.snap-container aside > *:not(img),
+.snap-container .carousel > * > *:not(img) {
+  text-align: left;
+}
+
+.carousel {
+  position: relative;
+  --current-item: 0;
+  overflow: hidden;
+}
+
+.carousel > *:not(.carousel-nav) {
+  padding: 1em;
+  padding-bottom: 52px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: calc(100% * (var(--item) - var(--current-item)));
+  top: 0;
+  overflow: auto;
+  transition: left 300ms ease-in-out;
+}
+
+.carousel-nav {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.3em;
+}
+
+.carousel-nav > * {
+  font-size: 1rem;
+}
+
+.scrollable {
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  left: -1000px;
+  top: -1000px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elements Tab | Dev Tools</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+  <div class="snap-container">
+    <section>
+      <div>
+        <h1>Dev Tools: The Elements Tab</h1>
+        <h2>UI Meetup, 12<sup>th</sup> July 2021</h2>
+        <h4>By Phani Rahul Sivalenka <a href="https://twitter.com/rahulsivalenka" target="__blank"><img
+              class="twitter-link" src="images/twitter.png" /></a></h4>
+        <p class="quote">Keep dev tools open to try out things. Can use up/down arrows to navigate through sections and
+          left/right arrows to navigate through description pane.</p>
+      </div>
+      <img alt="Elements Tab" src="images/elements-tab.png" />
+    </section>
+
+    <section>
+      <main>
+        <h2 id="edit-dom">Elements Tab: Edit DOM</h2>
+
+        <ul class="nav">
+          <li>
+            <i class="icon"></i>
+            <p class="text">Dashboard</p>
+          </li>
+          <li>
+            <i class="icon"></i>
+            <p class="text">Deployments</p>
+          </li>
+          <li>
+            <i class="icon"></i>
+            <p class="text">Nav Item</p>
+          </li>
+        </ul>
+      </main>
+
+      <aside class="carousel" style="--current-item:0">
+        <div style="--item:0">
+          <h3>Edit Content</h3>
+          <p class="quote">
+            Elements Tab allows us to edit the content of any DOM node.
+          </p>
+          <p>
+            We can check the overflow behavior of the nav bar item (<code>li</code> element) on the left by editing its
+            <code>.text</code> content in the
+            Elements tab.
+          </p>
+          <img alt="edit content" src="images/edit-content.png" />
+          <img alt="edit content" src="images/edit-content-long-text.png" />
+        </div>
+
+        <div style="--item:1">
+          <h3>Edit Tags</h3>
+          <p class="quote">
+            Allows us to edit tags.
+          </p>
+          <p>
+            Change the <code>p</code> tag of the nav item to a <code>span</code> to make it semantically accurate
+            and see if that effects its layout or style.
+          </p>
+          <img alt="edit tag" src="images/edit-tag.png" />
+          <img alt="edit tag" src="images/edit-tag-to-span.png" />
+        </div>
+
+        <div style="--item:2">
+          <h3>Edit/Add Attributes</h3>
+          <p class="quote">
+            Allows us to edit/add attributes on an element.
+          </p>
+          <p>
+            Add a data attribute <code>data-badge</code> and set its value as 10 on the <code>li</code> element of the
+            nav bar item.
+          </p>
+          <img alt="add attribute" src="images/add-attribute.png" />
+          <img alt="add attribute" src="images/add-attribute-1.png" />
+        </div>
+
+        <div style="--item:3">
+          <h3>Move Nodes</h3>
+          <p class="quote">
+            Allows us to move DOM nodes around.
+          </p>
+          <p>
+            Let's say we want to check how it likes if the icon is on the right side of the text for the nav bar item.
+            We drag and drop the <code>.text</code> element above the <code>.icon</code>.
+          </p>
+          <img alt="move node" src="images/move-node.png" />
+        </div>
+
+        <div style="--item:4">
+          <h3>Delete Nodes</h3>
+          <p class="quote">
+            Allows us to delete DOM nodes.
+          </p>
+          <p>
+            We can check if the nav menu borders maintain their curved state even when we have less items by simply
+            selecting nav bar item node and hitting <code>DEL</code> key.
+          </p>
+        </div>
+
+        <div style="--item:5">
+          <h3>Edit HTML</h3>
+          <p class="quote">
+            Allows us to edit any node as HTML by right clicking on a DOM element and choosing "Edit as HTML".
+          </p>
+          <p>
+            We can check if the nav menu borders maintain their curved state even when we have less items by simply
+            selecting nav bar item node and hitting <code>DEL</code> key.
+          </p>
+          <img alt="edit as HTML" src="images/edit-as-html.png" />
+          <img alt="edit as HTML" src="images/edit-as-html-1.png" />
+        </div>
+
+        <nav class="carousel-nav">
+          <button class="prev">&larr;</button>
+          <button class="next">&rarr;</button>
+        </nav>
+      </aside>
+    </section>
+
+    <section>
+      <div class="scrollable">
+        <h2 id="tip">Tip:</h2>
+        <p>We can access element instance of the latest inspected element by typing <code>$0</code> in the console.</p>
+        <p><code>$0</code> changes automatically to the selected element in the Elements Tab.</p>
+        <p>Older inspected elements can also be accessed like <code>$1, $2, ...</code></p>
+      </div>
+
+      <div>
+        <img alt="tip" src="images/bonus-tip-inspected-element-access.gif" />
+      </div>
+    </section>
+
+    <section>
+      <main>
+        <h2 id="dom-breakpoints">Elements Tab: DOM Breakpoints</h2>
+
+        <p class="hoverable quote">Hover on me to see a custom tooltip.</p>
+      </main>
+      <aside class="carousel" style="--current-item:0">
+        <div style="--item:0">
+          <h3>Break on subtree modifications</h3>
+          <p class="quote">
+            This allows us to pause the execution on any subtree modifications such as node adds/removals.
+          </p>
+
+          <p>
+            This tooltip here is added to document body when hovered on the element and removed from it immediately
+            after we move away from the hovered element. In this
+            situation, to inspect the tooltip or to know which code adds or removes the tooltip, we can set a subtree
+            modifications breakpoint on the body.
+          </p>
+          <img alt="edit content" src="images/break-on-subtree-mods.png" />
+        </div>
+
+        <div style="--item:1">
+          <h3>More breaking options</h3>
+          <p>
+            In addition to subtree modifications we also have
+          </p>
+          <ul>
+            <li><em>attribute modifications</em> - which allows us to break on attribute changes such as a class got
+              added
+              to the
+              clnode removal, etc</li>
+            <li><em>node removal</em> - which breaks when the current node on which the breakpoint is going to be
+              removed
+              from the
+              DOM</li>
+          </ul>
+          <img alt="edit content" src="images/break-on-subtree-mods.png" />
+        </div>
+
+        <div style="--item:2">
+          <p>
+            We can see the list of all these breakpoints in "DOM Breakpoints" tab.
+          </p>
+
+          <img alt="edit content" src="images/dom-breakpoints-list.png" />
+        </div>
+
+        <nav class="carousel-nav">
+          <button class="prev">&larr;</button>
+          <button class="next">&rarr;</button>
+        </nav>
+      </aside>
+    </section>
+
+    <section>
+      <main>
+        <h2 id="edit-styles">Elements Tab: Edit Styles</h2>
+
+      </main>
+      <aside>
+        <h3>Edit DOM</h3>
+
+      </aside>
+    </section>
+
+    <section>
+      <main>
+        <h2>Edit DOM</h2>
+
+      </main>
+      <aside>
+        <h3>Edit DOM</h3>
+
+      </aside>
+    </section>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
