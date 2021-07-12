@@ -140,6 +140,16 @@ code {
   border-radius: 4px;
 }
 
+p code:after {
+  content: none;
+}
+
+code:after {
+  content: '';
+  display: block;
+  width: 100%;
+}
+
 pre > code {
   display: block;
   overflow-x: auto;
@@ -216,6 +226,14 @@ em {
   overflow-x: hidden;
 }
 
+.scrollable + div {
+  align-self: center;
+}
+
+.scrollable + div > img {
+  max-height: 95vh;
+}
+
 .tooltip {
   position: fixed;
   left: -1000px;
@@ -240,4 +258,13 @@ em {
   padding: 0.5rem 0.75rem;
   margin: 0.25rem;
   cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--primary-color);
+  color: #000;
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark-color);
 }

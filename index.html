@@ -11,7 +11,7 @@
 
 <body>
   <div class="snap-container">
-    <section>
+    <!-- <section>
       <div>
         <h1>Dev Tools: The Elements Tab</h1>
         <h2>UI Meetup, 12<sup>th</sup> July 2021</h2>
@@ -218,9 +218,9 @@
           <button class="next">&rarr;</button>
         </nav>
       </aside>
-    </section>
+    </section> -->
 
-    <section>
+    <!-- <section>
       <main>
         <h2 id="edit-styles">Elements Tab: Edit Styles</h2>
 
@@ -284,22 +284,15 @@
         <div style="--item: 3">
           <h3>Add class</h3>
           <p class="quote">
-            Allows us to add/edit pseudo states (such as <code>:hover</code>,
-            <code>:visited</code>) for an element.
+            Allows us to add a new class to the selected element.
           </p>
 
           <p>
-            While the button is selected in the Elements Tab, click on + (New
-            Style Rule) button and edit
-            <code>button.btn</code> class name that has been added, to
-            <code>.btn:hover</code> and hit Tab key. Add the following under
-            that hover state style rule.
+            Add a new class by clicking <strong>.cls</strong> button under Styles Tab and typing in the new class name.
+            For our button you can type <code>primary</code> as the class name and hit Enter to ad that class.
           </p>
 
-          <code>background: var(--default-dark-color);</code>
-
-          <img alt="add pseudo state" src="images/add-pseudo.png" />
-          <img alt="add pseudo state" src="images/add-pseudo-1.png" />
+          <img alt="add class" src="images/add-class.png" />
         </div>
 
         <nav class="carousel-nav">
@@ -344,6 +337,26 @@
 
       <div>
         <img alt="tip" src="images/tip-changes.gif" />
+      </div>
+    </section> -->
+
+    <section>
+      <div class="scrollable">
+        <h2 id="tip-changes">Tip: Computed Styles</h2>
+        <p>The Computed Tab gives us the following capabilities.</p>
+        <ul>
+          <li>Box model visualization</li>
+          <li>Final computed value of each CSS property</li>
+          <li>
+            A hierarchical view of each property on the selected (or
+            inspected) element. In other words, it gives us all the cascading
+            overrides that have be applied on that specific property.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <img alt="tip" src="images/computed-tab.gif" />
       </div>
     </section>
 
