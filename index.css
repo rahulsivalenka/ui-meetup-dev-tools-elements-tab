@@ -1,3 +1,17 @@
+:root {
+  --primary-color: brown;
+  --primary-dark-color: #7b1c1c;
+  --primary-text-color: #e4cece;
+  --secondary-color: burlywood;
+  --secondary-text-color: inherit;
+  --accent-color: rgba(255, 228, 196, 0.5);
+  --accent-text-color: #610505;
+  --default-dark-color: #ccc;
+  --code-color: indianred;
+  --code-text-color: black;
+  --emphasis-text-color: crimson;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -32,7 +46,8 @@ body {
 .snap-container > section {
   scroll-snap-align: center;
   height: 100%;
-  background-color: burlywood;
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
   display: flex;
   gap: 16px;
   padding: 2em;
@@ -53,7 +68,7 @@ body {
 
 .snap-container > section > aside {
   flex: 1 0 60%;
-  background-color: brown;
+  background-color: var(--primary-color);
 }
 
 .snap-container > section h2,
@@ -106,7 +121,7 @@ body {
 
 .nav .icon {
   border-radius: 50%;
-  background-color: brown;
+  background-color: var(--primary-color);
   /* height: 24px;
   width: 24px; */
   height: 1em;
@@ -119,16 +134,26 @@ body {
 }
 
 code {
-  background-color: antiquewhite;
-  color: #000;
+  background-color: var(--code-color);
+  color: var(--code-text-color);
   padding: 0.1em 0.35em;
   border-radius: 4px;
+}
+
+pre > code {
+  display: block;
+  overflow-x: auto;
+}
+
+em {
+  color: var(--emphasis-text-color);
 }
 
 .quote {
   position: relative;
   padding: 0.75em;
-  background-color: rgba(255, 228, 196, 0.5);
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
 }
 
 .quote:before {
@@ -153,6 +178,7 @@ code {
   position: relative;
   --current-item: 0;
   overflow: hidden;
+  color: var(--primary-text-color);
 }
 
 .carousel > *:not(.carousel-nav) {
@@ -200,4 +226,18 @@ code {
   border-radius: 8px;
   color: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* border: 0; */
+.btn {
+  color: #000;
+  border-radius: 0.25rem;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem;
+  cursor: pointer;
 }
