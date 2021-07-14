@@ -226,11 +226,11 @@ em {
   overflow-x: hidden;
 }
 
-.scrollable + div {
+.scrollable + div:not(.tools-collage) {
   align-self: center;
 }
 
-.scrollable + div > img {
+.scrollable + div:not(.tools-collage) > img {
   max-height: 95vh;
 }
 
@@ -307,4 +307,132 @@ em {
   aspect-ratio: 1;
   height: 80px;
   border-radius: 50%;
+}
+
+.polygon {
+  height: 100px;
+  width: 100px;
+  background-color: var(--primary-color);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  animation: 1s ease-in-out infinite rotate;
+  transform: rotate(0deg);
+}
+
+.eyes {
+  display: flex;
+  gap: 4px;
+}
+
+.eye {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid;
+}
+
+.eye-lid {
+  z-index: 2;
+  position: absolute;
+  top: -100%;
+  height: 150%;
+  width: 300%;
+  background-color: burlywood;
+  border-radius: 50%;
+  animation: 8s ease infinite eye-lid-close;
+}
+
+.eye-ball {
+  border-radius: 50%;
+  z-index: 1;
+  height: 30%;
+  width: 30%;
+  background-color: black;
+  transform: translate(0, 0);
+  animation: 6s ease-out infinite eye-ball-move;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes eye-ball-move {
+  0%,
+  75%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  20% {
+    transform: translate(100%, 100%);
+  }
+
+  45% {
+    transform: translate(40%, 100%);
+  }
+
+  60% {
+    transform: translate(-100%, 100%);
+  }
+}
+
+@keyframes eye-lid-close {
+  0%,
+  10%,
+  100% {
+    top: -120%;
+  }
+
+  5% {
+    top: 0;
+  }
+}
+
+.tools-collage {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, 100px);
+}
+
+.tools-collage > * {
+  max-height: 50vh;
+  border: 3px solid burlywood;
+}
+
+.tools-collage > *:nth-child(1) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.tools-collage > *:nth-child(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 5;
+}
+
+.tools-collage > *:nth-child(3) {
+  grid-column: 1 / 3;
+  grid-row: 3 / 6;
+}
+
+.dark-switch {
+  background-color: white;
+  padding: 0.25em 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark-switch {
+    background-color: #333;
+    color: white;
+  }
 }
