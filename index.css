@@ -268,3 +268,43 @@ em {
 .btn.primary:hover {
   background: var(--primary-dark-color);
 }
+
+.card {
+  display: grid;
+  grid-template-areas: 'avatar content';
+  grid-template-columns: auto 1fr;
+  gap: 0.75em;
+  margin: 0.75em;
+  border-radius: 50px;
+  padding: 1em 1.25em;
+  border-radius: 50px;
+  /* Generated using https://neumorphism.io/#deb887 */
+  background: #deb887;
+  background: linear-gradient(145deg, #c8a67a, #eec590);
+  box-shadow: 20px 20px 60px #bd9c73, -20px -20px 60px #ffd49b;
+}
+
+.snap-container section:nth-child(even) .card {
+  border-radius: 50px;
+  background: #f5deb3;
+  background: linear-gradient(145deg, #ddc8a1, #ffeec0);
+  box-shadow: 20px 20px 60px #d0bd98, -20px -20px 60px #ffffce;
+}
+
+.card * {
+  margin: 0;
+}
+
+.card-content {
+  grid-area: content;
+  display: flex;
+  gap: 8px;
+}
+
+.card-avatar {
+  grid-area: avatar;
+  background-color: gray;
+  aspect-ratio: 1;
+  height: 80px;
+  border-radius: 50%;
+}
