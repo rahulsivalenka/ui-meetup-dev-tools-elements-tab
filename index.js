@@ -3,14 +3,14 @@ function setNavButtonStates(carousel, currentItem) {
   const numberOfItems = carousel.children.length - 1;
 
   if (currentItem === 0) {
-    previousButton.setAttribute('disabled', true);
+    previousButton?.setAttribute('disabled', true);
   } else {
-    previousButton.removeAttribute('disabled');
+    previousButton?.removeAttribute('disabled');
   }
   if (currentItem === numberOfItems - 1) {
-    nextButton.setAttribute('disabled', true);
+    nextButton?.setAttribute('disabled', true);
   } else {
-    nextButton.removeAttribute('disabled');
+    nextButton?.removeAttribute('disabled');
   }
 }
 
