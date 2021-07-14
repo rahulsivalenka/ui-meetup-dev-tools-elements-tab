@@ -403,6 +403,7 @@ em {
   display: grid;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(6, 100px);
+  margin-top: -40px;
 }
 
 .tools-collage > * {
@@ -425,6 +426,11 @@ em {
   grid-row: 3 / 6;
 }
 
+.tools-collage > *:nth-child(4) {
+  grid-column: 4 / 3;
+  grid-row: 4 / 6;
+}
+
 .dark-switch {
   background-color: white;
   padding: 0.25em 1em;
@@ -435,4 +441,16 @@ em {
     background-color: #333;
     color: white;
   }
+}
+section.thank-you {
+  font-size: clamp(2rem, 10vw, 100px);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: var(--emphasis-text-color);
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+section.thank-you p {
+  margin: 0;
 }
